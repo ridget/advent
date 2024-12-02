@@ -7,7 +7,11 @@ defmodule Advent.Year2024.Day02 do
   end
 
   def part2(args) do
-    args
+    reports = parse_input(args)
+
+    reports
+    |> Enum.filter(&safe?/1)
+    |> length()
   end
 
   def parse_input(args) do
@@ -35,5 +39,13 @@ defmodule Advent.Year2024.Day02 do
 
   def sorted?(list) do
     list == Enum.sort(list) or list == Enum.sort(list, &>=/2)
+  end
+
+  def safe?(report) do
+    (sorted?(report) and level_adjaceny_valid(report)) or
+      Enum.any?(0..(length(report) - 1), fn i ->
+        new_report = List.delete_at(report, i)
+        sorted?(new_report) and level_adjaceny_valid(new_report)
+      end)
   end
 end
