@@ -11,10 +11,12 @@ defmodule Advent.Year2024.Day03Test do
   end
 
   test "part2" do
-    input = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"
+    input = """
+      <why()!~/who(),mul(1,2)mul(2,2)^&mul(1,2)@@from()]<select(){do()['who()who()&]mul(1,2)~from(){}what()>mul(2,2){from(905,178);$/mul(1,2)$why()@don't()#why()#from()from()when(){mul(4,5)[^]/*what()!!mul(4,5)
+    """
 
     result = part2(input)
 
-    assert result == 48
+    assert result == 16
   end
 end
