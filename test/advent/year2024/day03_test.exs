@@ -3,12 +3,11 @@ defmodule Advent.Year2024.Day03Test do
 
   import Elixir.Advent.Year2024.Day03
 
-  @tag :skip
   test "part1" do
-    input = nil
+    input = "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))"
     result = part1(input)
 
-    assert result
+    assert result == 161
   end
 
   @tag :skip
